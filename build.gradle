@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.flywaydb.flyway" version "9.8.1"
 }
 
 group 'org.example'
@@ -12,6 +13,20 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    //Database
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.27'
+    implementation group: 'org.flywaydb', name: 'flyway-core', version: '9.10.2'
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/postgres'
+    user = 'postgres'
+    password = 'postgres'
+    driver = 'org.postgresql.Driver'
+    cleanDisabled=false
+    schemas = ['public']
+    table = 'tb_schema'
 }
 
 test {

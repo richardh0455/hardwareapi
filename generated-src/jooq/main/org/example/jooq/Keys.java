@@ -4,7 +4,9 @@
 package org.example.jooq;
 
 
+import org.example.jooq.tables.TbProduct;
 import org.example.jooq.tables.TbSchema;
+import org.example.jooq.tables.records.TbProductRecord;
 import org.example.jooq.tables.records.TbSchemaRecord;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
@@ -23,5 +25,6 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<TbProductRecord> TB_PRODUCT_PKEY = Internal.createUniqueKey(TbProduct.TB_PRODUCT, DSL.name("tb_product_pkey"), new TableField[] { TbProduct.TB_PRODUCT.PRODUCT_ID }, true);
     public static final UniqueKey<TbSchemaRecord> TB_SCHEMA_PK = Internal.createUniqueKey(TbSchema.TB_SCHEMA, DSL.name("tb_schema_pk"), new TableField[] { TbSchema.TB_SCHEMA.INSTALLED_RANK }, true);
 }

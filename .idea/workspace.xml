@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0940f1a0-0cd6-4d32-b4bd-fbb1768064f2" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    <list default="true" id="0940f1a0-0cd6-4d32-b4bd-fbb1768064f2" name="Changes" comment="Add Flyway for Database Migrations &#10;&#10;Add Docker container running Postgres for local dev">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
@@ -49,6 +48,34 @@
       <recent name="C:\Code_Workspace\hardwareapi" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="hardwareapi [generateJooq]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateJooq" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.hardwareapi [generateJooq]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680126979006</updated>
-      <workItem from="1680126980160" duration="377000" />
+      <workItem from="1680126980160" duration="515000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1680127138943</created>
@@ -66,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680127138943</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Flyway for Database Migrations &#10;&#10;Add Docker container running Postgres for local dev">
+      <created>1680127369405</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680127369405</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,6 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Add Flyway for Database Migrations &#10;&#10;Add Docker container running Postgres for local dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Flyway for Database Migrations &#10;&#10;Add Docker container running Postgres for local dev" />
   </component>
 </project>

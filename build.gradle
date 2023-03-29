@@ -20,6 +20,10 @@ dependencies {
     jooqGenerator group: 'org.postgresql', name: 'postgresql', version: '42.5.1'
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '9.10.2'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+
+    //API Server
+    implementation group: 'io.dropwizard', name: 'dropwizard-core', version: '2.1.5'
+    implementation group: 'io.dropwizard', name: 'dropwizard-auth', version: '2.1.5'
 }
 
 flyway {

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0940f1a0-0cd6-4d32-b4bd-fbb1768064f2" name="Changes" comment="Added Jooq for POJO ORM &#10;Baselined Flyway &#10;Generated Defualt Jooq Files">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__Create_Product_table.sql" afterDir="false" />
+    <list default="true" id="0940f1a0-0cd6-4d32-b4bd-fbb1768064f2" name="Changes" comment="Created a product table &#10;re-generated jooq code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/database/ConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Keys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Public.java" beforeDir="false" afterPath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Public.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/generated-src/jooq/main/org/example/jooq/Tables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +91,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Code_Workspace\hardwareapi" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.database" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.hardwareapi [generateJooq]">
@@ -219,7 +220,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680126979006</updated>
-      <workItem from="1680126980160" duration="1054000" />
+      <workItem from="1680126980160" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1680127138943</created>
@@ -242,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680127662573</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created a product table &#10;re-generated jooq code">
+      <created>1680128174458</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680128174458</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +260,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Add Flyway for Database Migrations &#10;&#10;Add Docker container running Postgres for local dev" />
     <MESSAGE value="Added Jooq for POJO ORM &#10;Baselined Flyway &#10;Generated Defualt Jooq Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Jooq for POJO ORM &#10;Baselined Flyway &#10;Generated Defualt Jooq Files" />
+    <MESSAGE value="Created a product table &#10;re-generated jooq code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a product table &#10;re-generated jooq code" />
   </component>
 </project>

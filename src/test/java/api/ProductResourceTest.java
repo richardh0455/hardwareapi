@@ -2,10 +2,13 @@ package api;
 
 import fakes.FakeProduct;
 import org.assertj.core.api.Assertions;
+import org.eclipse.jetty.server.Response;
+import org.example.api.BasicResponse;
 import org.example.api.model.ProductModel;
 import org.example.api.resource.ProductResource;
 import org.example.database.JooqConfiguration;
 import org.example.database.dao.ProductDao;
+import org.example.jooq.tables.pojos.TbProduct;
 import org.example.jooq.tables.records.TbProductRecord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -40,7 +43,6 @@ public class ProductResourceTest {
         productDao = new ProductDao(JooqConfiguration.get());
         synchronized (initLock) {
             if (!testsAreInitialised) {
-
                 TbProductRecord hammerRecord = FakeProduct.anyProduct(FakeProduct.withName("Hammer"), FakeProduct.withRandomPrice(), FakeProduct.withStatus(ProductDao.ProductStatus.ACTIVE));
                 TbProductRecord drillRecord = FakeProduct.anyProduct(FakeProduct.withName("Drill"), FakeProduct.withRandomPrice(), FakeProduct.withStatus(ProductDao.ProductStatus.ACTIVE));
                 validProducts.addAll(Arrays.asList(hammerRecord, drillRecord));
@@ -107,6 +109,19 @@ public class ProductResourceTest {
         Assertions.assertThatThrownBy(() -> productResource.updateProduct(0, new ProductModel(0, "Update Product", new BigDecimal("100.0"))))
                 .isInstanceOf(WebApplicationException.class)
                 .hasMessage("Product Not found");
+    }
+
+    @Test
+    @DisplayName("Delete a Product")
+    public void deleteProduct() {
+        TbProductRecord product = validProducts.get(0);
+        BasicResponse response = productResource.deleteProduct(product.getProductId());
+        assertThat(response.getCode()).isEqualTo(Response.SC_OK);
+        TbProduct updatedProduct = productDao.fetchOneByProductId(product.getProductId());
+        assertThat(updatedProduct.getProductStatus()).isEqualTo(ProductDao.ProductStatus.INACTIVE.toString());
+        //The database is shared across tests, ensure validAssets is up to date
+        validProducts.remove(0);
+        invalidProducts.add(product);
     }
 
 }

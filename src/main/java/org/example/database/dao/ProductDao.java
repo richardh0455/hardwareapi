@@ -55,6 +55,13 @@ public class ProductDao extends TbProductDao {
                 .execute() > 0;
     }
 
+    public boolean deleteProduct(Integer productId) {
+        return using(JooqConfiguration.get()).update(TB_PRODUCT)
+                .set(TB_PRODUCT.PRODUCT_STATUS, ProductStatus.INACTIVE.toString())
+                .where(TB_PRODUCT.PRODUCT_ID.eq(productId))
+                .execute() > 0;
+    }
+
 
     public enum ProductStatus {
         ACTIVE,

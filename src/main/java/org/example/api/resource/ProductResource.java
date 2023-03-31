@@ -2,6 +2,7 @@ package org.example.api.resource;
 
 import com.codahale.metrics.annotation.Timed;
 import org.eclipse.jetty.server.Response;
+import org.example.api.BasicResponse;
 import org.example.api.model.ProductModel;
 import org.example.database.JooqConfiguration;
 import org.example.database.dao.ProductDao;
@@ -58,6 +59,22 @@ public class ProductResource {
         }
         product = productDao.fetchOneByProductId(id);
         return new ProductModel(product);
+    }
+
+    @DELETE
+    @Timed
+    @RolesAllowed("ADMIN")
+    @Path("/{id}")
+    public BasicResponse deleteProduct(@PathParam("id") Integer id) {
+        TbProduct product = productDao.fetchOneByProductId(id);
+        if (product == null) {
+            throw new WebApplicationException("Product Not found", Response.SC_NOT_FOUND);
+        }
+        boolean success = productDao.deleteProduct(id);
+        if (!success) {
+            throw new WebApplicationException("Product Delete failed", Response.SC_INTERNAL_SERVER_ERROR);
+        }
+        return new BasicResponse(Response.SC_OK, "Product Deleted Successfully");
     }
 
 }

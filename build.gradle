@@ -24,6 +24,11 @@ dependencies {
     //API Server
     implementation group: 'io.dropwizard', name: 'dropwizard-core', version: '2.1.5'
     implementation group: 'io.dropwizard', name: 'dropwizard-auth', version: '2.1.5'
+
+    //Test containers
+    testImplementation group: 'org.testcontainers', name: 'testcontainers', version: '1.17.6'
+    testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.17.6'
+    testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 flyway {

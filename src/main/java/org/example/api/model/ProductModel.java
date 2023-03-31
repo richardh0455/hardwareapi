@@ -13,6 +13,7 @@ public class ProductModel {
     BigDecimal price;
 
     public ProductModel(Integer id, String name, BigDecimal price) {
+        this.id = id;
         this.name = name;
         this.price = price;
     }

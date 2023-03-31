@@ -22,6 +22,7 @@ public class TbProduct implements Serializable {
     private final BigDecimal productPrice;
     private final LocalDateTime productCreatedAt;
     private final LocalDateTime updatedAt;
+    private final String productStatus;
 
     public TbProduct(TbProduct value) {
         this.productId = value.productId;
@@ -29,6 +30,7 @@ public class TbProduct implements Serializable {
         this.productPrice = value.productPrice;
         this.productCreatedAt = value.productCreatedAt;
         this.updatedAt = value.updatedAt;
+        this.productStatus = value.productStatus;
     }
 
     public TbProduct(
@@ -36,13 +38,15 @@ public class TbProduct implements Serializable {
         String productName,
         BigDecimal productPrice,
         LocalDateTime productCreatedAt,
-        LocalDateTime updatedAt
+        LocalDateTime updatedAt,
+        String productStatus
     ) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productCreatedAt = productCreatedAt;
         this.updatedAt = updatedAt;
+        this.productStatus = productStatus;
     }
 
     /**
@@ -78,6 +82,13 @@ public class TbProduct implements Serializable {
      */
     public LocalDateTime getUpdatedAt() {
         return this.updatedAt;
+    }
+
+    /**
+     * Getter for <code>public.tb_product.product_status</code>.
+     */
+    public String getProductStatus() {
+        return this.productStatus;
     }
 
     @Override
@@ -119,6 +130,12 @@ public class TbProduct implements Serializable {
         }
         else if (!this.updatedAt.equals(other.updatedAt))
             return false;
+        if (this.productStatus == null) {
+            if (other.productStatus != null)
+                return false;
+        }
+        else if (!this.productStatus.equals(other.productStatus))
+            return false;
         return true;
     }
 
@@ -131,6 +148,7 @@ public class TbProduct implements Serializable {
         result = prime * result + ((this.productPrice == null) ? 0 : this.productPrice.hashCode());
         result = prime * result + ((this.productCreatedAt == null) ? 0 : this.productCreatedAt.hashCode());
         result = prime * result + ((this.updatedAt == null) ? 0 : this.updatedAt.hashCode());
+        result = prime * result + ((this.productStatus == null) ? 0 : this.productStatus.hashCode());
         return result;
     }
 
@@ -143,6 +161,7 @@ public class TbProduct implements Serializable {
         sb.append(", ").append(productPrice);
         sb.append(", ").append(productCreatedAt);
         sb.append(", ").append(updatedAt);
+        sb.append(", ").append(productStatus);
 
         sb.append(")");
         return sb.toString();

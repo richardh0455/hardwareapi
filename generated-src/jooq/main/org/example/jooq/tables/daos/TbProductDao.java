@@ -128,4 +128,19 @@ public class TbProductDao extends DAOImpl<TbProductRecord, org.example.jooq.tabl
     public List<org.example.jooq.tables.pojos.TbProduct> fetchByUpdatedAt(LocalDateTime... values) {
         return fetch(TbProduct.TB_PRODUCT.UPDATED_AT, values);
     }
+
+    /**
+     * Fetch records that have <code>product_status BETWEEN lowerInclusive AND
+     * upperInclusive</code>
+     */
+    public List<org.example.jooq.tables.pojos.TbProduct> fetchRangeOfProductStatus(String lowerInclusive, String upperInclusive) {
+        return fetchRange(TbProduct.TB_PRODUCT.PRODUCT_STATUS, lowerInclusive, upperInclusive);
+    }
+
+    /**
+     * Fetch records that have <code>product_status IN (values)</code>
+     */
+    public List<org.example.jooq.tables.pojos.TbProduct> fetchByProductStatus(String... values) {
+        return fetch(TbProduct.TB_PRODUCT.PRODUCT_STATUS, values);
+    }
 }

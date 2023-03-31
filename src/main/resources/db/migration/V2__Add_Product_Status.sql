@@ -1,0 +1,1 @@
+ALTER TABLE tb_product ADD COLUMN product_status VARCHAR(255) NOT NULL;

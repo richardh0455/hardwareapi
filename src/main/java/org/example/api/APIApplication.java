@@ -24,7 +24,7 @@ public class APIApplication extends Application<APIConfiguration> {
         //TODO:: Implement oAuth2.0 Filter.
         // Can probably do a simple Basic Auth flow but
         // more interesting would be a Password Grant or Authroization Code Grant
-        //Dropwizard also allows us to implement user roles so we can limit which
+        // Dropwizard also allows us to implement user roles so we can limit which
         // endpoint a User has access to.
         /*environment.jersey().register(new AuthDynamicFeature(
                 new OAuthCredentialAuthFilter.Builder<AuthUser>()

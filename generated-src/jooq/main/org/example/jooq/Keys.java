@@ -4,8 +4,12 @@
 package org.example.jooq;
 
 
+import org.example.jooq.tables.TbOrder;
+import org.example.jooq.tables.TbOrderItem;
 import org.example.jooq.tables.TbProduct;
 import org.example.jooq.tables.TbSchema;
+import org.example.jooq.tables.records.TbOrderItemRecord;
+import org.example.jooq.tables.records.TbOrderRecord;
 import org.example.jooq.tables.records.TbProductRecord;
 import org.example.jooq.tables.records.TbSchemaRecord;
 import org.jooq.TableField;
@@ -25,6 +29,8 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<TbOrderRecord> TB_ORDER_PKEY = Internal.createUniqueKey(TbOrder.TB_ORDER, DSL.name("tb_order_pkey"), new TableField[] { TbOrder.TB_ORDER.ORDER_ID }, true);
+    public static final UniqueKey<TbOrderItemRecord> TB_ORDER_ITEM_PKEY = Internal.createUniqueKey(TbOrderItem.TB_ORDER_ITEM, DSL.name("tb_order_item_pkey"), new TableField[] { TbOrderItem.TB_ORDER_ITEM.ORIT_ID }, true);
     public static final UniqueKey<TbProductRecord> TB_PRODUCT_PKEY = Internal.createUniqueKey(TbProduct.TB_PRODUCT, DSL.name("tb_product_pkey"), new TableField[] { TbProduct.TB_PRODUCT.PRODUCT_ID }, true);
     public static final UniqueKey<TbSchemaRecord> TB_SCHEMA_PK = Internal.createUniqueKey(TbSchema.TB_SCHEMA, DSL.name("tb_schema_pk"), new TableField[] { TbSchema.TB_SCHEMA.INSTALLED_RANK }, true);
 }

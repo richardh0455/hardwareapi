@@ -4,6 +4,8 @@
 package org.example.jooq;
 
 
+import org.example.jooq.tables.TbOrder;
+import org.example.jooq.tables.TbOrderItem;
 import org.example.jooq.tables.TbProduct;
 import org.example.jooq.tables.TbSchema;
 
@@ -13,6 +15,16 @@ import org.example.jooq.tables.TbSchema;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>public.tb_order</code>.
+     */
+    public static final TbOrder TB_ORDER = TbOrder.TB_ORDER;
+
+    /**
+     * The table <code>public.tb_order_item</code>.
+     */
+    public static final TbOrderItem TB_ORDER_ITEM = TbOrderItem.TB_ORDER_ITEM;
 
     /**
      * The table <code>public.tb_product</code>.

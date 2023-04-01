@@ -7,6 +7,8 @@ package org.example.jooq;
 import java.util.Arrays;
 import java.util.List;
 
+import org.example.jooq.tables.TbOrder;
+import org.example.jooq.tables.TbOrderItem;
 import org.example.jooq.tables.TbProduct;
 import org.example.jooq.tables.TbSchema;
 import org.jooq.Catalog;
@@ -26,6 +28,16 @@ public class Public extends SchemaImpl {
      * The reference instance of <code>public</code>
      */
     public static final Public PUBLIC = new Public();
+
+    /**
+     * The table <code>public.tb_order</code>.
+     */
+    public final TbOrder TB_ORDER = TbOrder.TB_ORDER;
+
+    /**
+     * The table <code>public.tb_order_item</code>.
+     */
+    public final TbOrderItem TB_ORDER_ITEM = TbOrderItem.TB_ORDER_ITEM;
 
     /**
      * The table <code>public.tb_product</code>.
@@ -53,6 +65,8 @@ public class Public extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            TbOrder.TB_ORDER,
+            TbOrderItem.TB_ORDER_ITEM,
             TbProduct.TB_PRODUCT,
             TbSchema.TB_SCHEMA
         );

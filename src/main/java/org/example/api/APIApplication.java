@@ -5,6 +5,8 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.example.api.config.APIConfiguration;
 import org.example.api.health.HealthCheck;
+import org.example.api.resource.OrderResource;
+import org.example.api.resource.ProductResource;
 
 public class APIApplication extends Application<APIConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -20,6 +22,11 @@ public class APIApplication extends Application<APIConfiguration> {
     public void run(APIConfiguration configuration, Environment environment) throws Exception {
         environment.healthChecks().register("health", new HealthCheck());
 
+        final ProductResource productResource = new ProductResource();
+        environment.jersey().register(productResource);
+
+        final OrderResource orderResource = new OrderResource();
+        environment.jersey().register(orderResource);
 
         //TODO:: Implement oAuth2.0 Filter.
         // Can probably do a simple Basic Auth flow but
